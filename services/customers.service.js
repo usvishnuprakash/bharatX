@@ -1,5 +1,5 @@
 "use strict";
-const consumersActions = require("../actions/consumers.actions");
+const consumersActions = require("../actions/customers.actions");
 
 module.exports = {
 	name: "customers",

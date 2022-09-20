@@ -1,7 +1,7 @@
 const config = {
 	path: "/api",
 
-	whitelist: ["**"],
+	whitelist: ["api.*"],
 	// for middle wares
 	use: [],
 
@@ -11,7 +11,7 @@ const config = {
 
 	authorization: true,
 
-	autoAliases: true,
+	autoAliases: false,
 
 	callingOptions: {},
 
@@ -58,7 +58,6 @@ const config = {
 };
 
 module.exports = [
-	config,
-	Object.assign(config, require("./partners.routes")),
-	Object.assign(config, require("./consumers.routes")),
+	{ ...config, ...require("./partners.routes") },
+	{ ...config, ...require("./customers.routes") },
 ];
